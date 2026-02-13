@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Impact Calculator</title>
+  <link rel="stylesheet" href="/app/styles.css">
+</head>
+<body>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+
+  <main class="layout">
+    <header class="hero reveal">
+      <p class="eyebrow">Good With AI</p>
+      <h1>Climate Impact Calculator</h1>
+      <p class="subtitle">Transparent estimates for AI usage energy and water, with everyday comparisons.</p>
+    </header>
+
+    <section class="toggle-card reveal">
+      <div>
+        <h2>Include Training Impact</h2>
+        <p class="muted">Training can be amortized across huge numbers of future requests. Toggle to include or exclude that share.</p>
+      </div>
+      <label class="toggle-wrap" for="includeTraining">
+        <input id="includeTraining" type="checkbox">
+        <span class="toggle-ui"></span>
+        <span class="toggle-text" id="trainingToggleText">Excluded</span>
+      </label>
+    </section>
+
+    <section class="grid reveal">
+      <article class="panel">
+        <h3>Usage Inputs</h3>
+        <label>
+          Text prompts per day
+          <input id="textPerDay" type="number" min="0" value="30">
+        </label>
+        <label>
+          Images generated per week
+          <input id="imagesPerWeek" type="number" min="0" value="14">
+        </label>
+        <label>
+          Videos generated per month
+          <input id="videosPerMonth" type="number" min="0" value="2">
+        </label>
+      </article>
+
+      <article class="panel">
+        <h3>Model Selection</h3>
+        <label>
+          Text model benchmark
+          <select id="textModel"></select>
+        </label>
+        <label>
+          Image model benchmark
+          <select id="imageModel"></select>
+        </label>
+        <label>
+          Video model benchmark
+          <select id="videoModel"></select>
+        </label>
+        <label>
+          Training amortization scenario
+          <select id="trainingScenario">
+            <option value="1000000000000">Conservative (1T lifetime actions)</option>
+            <option value="200000000000" selected>Central (200B lifetime actions)</option>
+            <option value="50000000000">Aggressive (50B lifetime actions)</option>
+          </select>
+        </label>
+      </article>
+    </section>
+
+    <section class="results reveal">
+      <article class="result-card">
+        <h3>Monthly AI Energy</h3>
+        <p id="energyRange" class="value">-</p>
+        <p id="energyMid" class="muted">-</p>
+      </article>
+      <article class="result-card">
+        <h3>Monthly AI Water</h3>
+        <p id="waterRange" class="value">-</p>
+        <p id="waterMid" class="muted">-</p>
+      </article>
+      <article class="result-card">
+        <h3>Data Confidence</h3>
+        <p id="confidenceSummary" class="value small">-</p>
+        <p class="muted">Shows selected-model confidence labels from the dataset.</p>
+      </article>
+    </section>
+
+    <section class="panel reveal">
+      <h3>Context Equivalents (Midpoint)</h3>
+      <div class="chips" id="equivalents"></div>
+    </section>
+
+    <section class="panel reveal">
+      <h3>Source Notes</h3>
+      <ul id="sourceList" class="sources"></ul>
+    </section>
+  </main>
+
+  <script src="/app/main.js" type="module"></script>
+</body>
+</html>

@@ -1,16 +1,18 @@
-# Source Set: Open Model Training Reports
+# Source Set: Open Model Training Reports (Chinese Labs Focus)
 
-- DeepSeek-V3: https://arxiv.org/abs/2412.19437
-- Qwen2 Technical Report: https://arxiv.org/abs/2407.10671
-- MiniMax-01 Report: https://arxiv.org/abs/2501.08313
-- Accessed: 2026-02-13
-- Type: Technical reports / preprints
+## URLs
+- DeepSeek-V3 technical report: https://arxiv.org/abs/2412.19437
+- Qwen3 technical report: https://arxiv.org/abs/2505.09388
+- MiniMax-01 technical report: https://arxiv.org/abs/2501.08313
 
-## Extracted metrics used
-- DeepSeek-V3 training run: 2.788 million H800 GPU-hours
-- Qwen2 pretraining data: over 7 trillion tokens
-- MiniMax-01 continued training: over 512 billion vision-language tokens
+## Accessed
+- 2026-02-13
+
+## Extracted metrics
+- DeepSeek-V3: full training consumed 2.788 million H800 GPU-hours.
+- Qwen3: pretrained on approximately 36 trillion tokens.
+- MiniMax-01: continued training over 512 billion vision-language tokens.
 
 ## Notes
-- Only DeepSeek currently provides a direct compute-hour metric suitable for first-pass energy modeling.
-- Qwen and MiniMax entries are currently scale indicators; energy requires hardware/runtime assumptions.
+- DeepSeek provides direct compute-hours needed for first-pass training energy estimates.
+- Qwen3 and MiniMax rows provide scale indicators; direct energy requires additional hardware/runtime assumptions.

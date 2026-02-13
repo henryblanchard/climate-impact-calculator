@@ -6,16 +6,29 @@ This repository supports the `goodwithai.org/climate` experience.
 Build a transparent, layperson-friendly calculator for AI climate impact that:
 - Estimates inference energy and water use for text, image, and video generation
 - Optionally includes training impacts (amortized)
-- Compares AI impact to familiar activities (Netflix, driving, flights, etc.)
+- Compares AI impact to familiar activities (Netflix, driving, flights, almonds, golf, etc.)
 - Shows ranges and uncertainty so results are honest and interpretable
 
 ## Project Structure
 - `app/` - calculator UI and interaction logic
 - `data/raw/` - unmodified source extracts
+- `data/raw/aie/` - AI Energy Score benchmark CSV snapshots
 - `data/processed/` - normalized datasets used by the calculator
 - `data/reference/` - context comparison datasets (non-AI activities)
 - `research/sources/` - source notes and citations
 - `docs/` - methodology, assumptions, and roadmap
+
+## Current data status
+- Phase 1 verifiable findings are tracked in `docs/phase1-verifiable-findings.md`.
+- Unit conversions are tracked in `docs/unit-conventions.md`.
+- Latest-model coverage status (including GPT-5 and Gemini 3 availability caveats) is tracked in `docs/model-coverage.md`.
+
+## Run the calculator locally
+```bash
+cd "/Users/henryblanchard/Documents/New project"
+python3 -m http.server 8000
+```
+Then open `http://localhost:8000/app/index.html`.
 
 ## Workflow
 1. Add source-backed estimates into `data/raw/` and `research/sources/`
